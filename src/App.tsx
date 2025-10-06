@@ -1,5 +1,6 @@
 import { Box, Grid, GridItem } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
+import GameGrid from "./components/GameGrid";
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
         </GridItem>
       </Box>
 
-      <GridItem area="main" bg="dodgerblue">
-        Main
+      <GridItem area="main">
+        <GameGrid />
       </GridItem>
     </Grid>
   ); // 'Box' element and 'hideBelow' attribute added required for Chakra UI v3 // 'show' and 'below' for v2
