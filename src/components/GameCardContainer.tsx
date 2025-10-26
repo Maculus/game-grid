@@ -8,7 +8,7 @@ interface Props {
 const GameCardContainer = ({ children }: Props) => {
   return (
     // Wrapper Box component for consistent styling
-    <Box width="250px" maxW="lg" borderRadius={10} overflow="hidden">
+    <Box maxW="lg" borderRadius={10} overflow="hidden">
       {children}
     </Box>
   );
