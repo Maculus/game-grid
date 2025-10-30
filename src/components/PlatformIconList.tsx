@@ -17,25 +17,28 @@ interface Props {
   platforms: Platform[];
 }
 
-const PlatformIconList = ({ platforms }: Props) => {
-  const iconMap: { [key: string]: IconType } = {
-    // Mapping platform slugs to icons
-    pc: FaWindows,
-    playstation: FaPlaystation,
-    xbox: FaXbox,
-    nintendo: SiNintendo,
-    mac: FaApple,
-    linux: FaLinux,
-    android: FaAndroid,
-    ios: MdPhoneIphone,
-    web: BsGlobe
-  };
+const iconMap: { [key: string]: IconType } = {
+  // Mapping platform slugs to icons
+  pc: FaWindows,
+  playstation: FaPlaystation,
+  xbox: FaXbox,
+  nintendo: SiNintendo,
+  mac: FaApple,
+  linux: FaLinux,
+  android: FaAndroid,
+  ios: MdPhoneIphone,
+  web: BsGlobe,
+};
 
+const PlatformIconList = ({ platforms }: Props) => {
   return (
     <HStack marginY={1}>
-      {platforms.map((platform) => (
-        <Icon key={platform.id} as={iconMap[platform.slug]} color="gray.500" />
-      ))}
+      {platforms.map((platform) => {
+        const IconComponent = iconMap[platform.slug];
+        if (!IconComponent) return null; // skip unknown platform to avoid Chakra error
+
+        return <Icon key={platform.id} as={IconComponent} color="gray.500" />;
+      })}
     </HStack>
   );
 };
