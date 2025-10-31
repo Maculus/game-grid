@@ -12,7 +12,7 @@ interface Props {
 // GameQuery interface imported to avoid passing multiple variables & Args
 
 const GameGrid = ({ gameQuery }: Props) => {
-  const { data, error, isLoading } = useGames(gameQuery);
+  const { data, error, isLoading } = useGames(gameQuery); // Contains Genre and Platform
   const skeletons = [1, 2, 3, 4, 5];
 
   return (
