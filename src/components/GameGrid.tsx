@@ -19,7 +19,7 @@ const GameGrid = ({ gameQuery }: Props) => {
     <>
       {error && <text>{error}</text>}
 
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 5 }} padding={5} gap={3}>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 5 }} padding={5} gap={6}>
         {isLoading &&
           skeletons.map((skeleton) => (
             <GameCardContainer key={skeleton}>
